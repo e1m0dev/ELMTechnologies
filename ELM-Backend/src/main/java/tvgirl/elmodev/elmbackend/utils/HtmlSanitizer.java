@@ -1,0 +1,1 @@
+package tvgirl.elmodev.elmbackend.util; import org.jsoup.Jsoup; import org.jsoup.safety.Safelist; public class HtmlSanitizer { private static final Safelist safelist = Safelist.relaxed() .addTags("img") .addAttributes( "img", "src", "alt", "width", "height" ); public static String sanitize(String html) { return Jsoup.clean( html, safelist ); } }
