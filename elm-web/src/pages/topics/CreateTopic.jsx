@@ -73,7 +73,7 @@ export function CreateTopic() {
             content: editor.getHTML()
         };
 
-        const response = await fetch("http://localhost:8080/api/topic", {
+        const response = await fetch("https://elmtechnologies.onrender.com/api/topic", {
             method: "POST",
 
             headers: {
@@ -119,7 +119,7 @@ export function CreateTopic() {
             );
 
             const response = await fetch(
-                "http://localhost:8080/api/upload",
+                "https://elmtechnologies.onrender.com/api/upload",
                 {
                     method: "POST",
                     body: formData
