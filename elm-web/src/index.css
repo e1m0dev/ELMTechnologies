@@ -1,0 +1,25 @@
+:root {
+    --background-main: #181a1b;
+    --default-color: oklch(0.905 0.014 355.035);
+    --actient-color: oklch(0.799 0.2 327.248);
+}
+
+html,
+body,
+#root {
+    padding: 5px;
+    min-height: 100%;
+
+    background-color: var(--background-main);
+    color: var(--default-color);
+}
+
+body {
+    background-color: var(--background-main);
+    color: var(--default-color);
+
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
