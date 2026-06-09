@@ -1,0 +1,476 @@
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.topic__create {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* Сам редактор TipTap */
+.ProseMirror {
+    min-height: 450px;
+
+    outline: none;
+
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 14pt;
+
+    line-height: 1.5;
+
+    text-align: justify;
+}
+
+/* Обычный абзац */
+.ProseMirror p {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-indent: 1.25cm;
+}
+
+/* Заголовки без абзацного отступа */
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5 {
+    text-indent: 0;
+}
+
+/* Если абзац выровнен по центру или вправо — убираем красную строку */
+.ProseMirror p[style*="text-align: center"],
+.ProseMirror p[style*="text-align: right"],
+.ProseMirror p[style*="text-align: right"] {
+    text-indent: 0;
+}
+
+.ProseMirror li p {
+    margin: 0;
+    text-indent: -5cm;
+    text-align: inherit;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 40px;
+
+    text-indent: -5cm;
+    text-align: left;
+}
+
+
+/* Заголовки */
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5 {
+    text-indent: 0;
+
+    font-weight: bold;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/* Списки */
+.ProseMirror ul,
+.ProseMirror ol {
+    margin-left: 40px;
+
+    text-indent: 0;
+}
+
+/* Цитаты */
+.ProseMirror blockquote {
+    border-left: 4px solid #999;
+
+    padding-left: 15px;
+
+    margin-left: 20px;
+
+    color: #666;
+
+    font-style: italic;
+
+    text-indent: 0;
+}
+
+/* Код */
+.ProseMirror pre {
+    background: #1e1e1e;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    overflow-x: auto;
+
+    text-indent: 0;
+}
+
+.ProseMirror code {
+    font-family: Consolas, monospace;
+}
+
+/* Изображения */
+.ProseMirror img {
+    max-width: 100%;
+
+    height: auto;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Выравнивание картинок */
+.image-left {
+    display: block;
+
+    margin-right: auto;
+}
+
+.image-center {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-right {
+    display: block;
+
+    margin-left: auto;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    border: 1px solid #333;
+
+    background: #1a1a1a;
+}
+
+.toolbar button {
+    padding: 8px 12px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background: #2b2b2b;
+
+    color: white;
+}
+
+.ProseMirror {
+    min-height: 350px;
+
+    outline: none;
+
+    color: white;
+}
+
+.ProseMirror img {
+    max-width: 100%;
+
+    border-radius: 12px;
+}
+
+.ProseMirror blockquote {
+    border-left: 4px solid #555;
+
+    padding-left: 15px;
+
+    color: #aaa;
+}
+
+.ProseMirror pre {
+    background: #1e1e1e;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+.editor p[align="center"],
+.editor h1[align="center"],
+.editor h2[align="center"] {
+    text-align: center;
+}
+
+.topic__createSpace {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+    justify-items: center;
+
+    align-content: center;
+    align-items: center;
+
+    gap: 50px;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.topic__createSpace input,
+.topic__createSpace select {
+    border-radius: 15px;
+
+    border: 1px #ff00fc solid;
+    padding: 15px;
+
+    color: var(--actient-color);
+
+    background: #2c2a2a;
+}
+
+.topic__footerButtons {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+    justify-items: center;
+
+    gap: 100px;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.topic__footerButtons button {
+    border-radius: 15px;
+
+    border: 1px #ff00fc solid;
+    padding: 15px;
+
+    color: var(--actient-color);
+
+    cursor: pointer;
+    background: #2c2a2a;
+
+    transition: transform 0.2s ease;
+}
+
+
+.topic__footerButtons button:hover {
+    transform: scale(1.1);
+}
+
+/* ===========================
+   РЕДАКТОР
+   =========================== */
+
+.editor {
+    min-height: 777px;
+
+    border: 1px solid #333;
+
+    padding: 20px;
+
+    background: #2c2a2a;
+}
+
+/* Корневой элемент TipTap */
+.ProseMirror {
+    min-height: 450px;
+
+    outline: none;
+
+    color: white;
+
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+
+    line-height: 1.5;
+
+    text-align: justify;
+}
+
+/* ===========================
+   АБЗАЦЫ
+   =========================== */
+
+.ProseMirror p {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    text-indent: 1.25cm;
+}
+
+/* ===========================
+   ЗАГОЛОВКИ
+   =========================== */
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5 {
+    text-indent: 0;
+
+    margin-top: 20px;
+    margin-bottom: 12px;
+
+    font-weight: bold;
+}
+
+.ProseMirror h1 {
+    font-size: 32px;
+}
+
+.ProseMirror h2 {
+    font-size: 28px;
+}
+
+.ProseMirror h3 {
+    font-size: 24px;
+}
+
+.ProseMirror h4 {
+    font-size: 20px;
+}
+
+.ProseMirror h5 {
+    font-size: 18px;
+}
+
+/* ===========================
+   СПИСКИ
+   =========================== */
+
+.ProseMirror ul,
+.ProseMirror ol {
+    margin-left: 40px;
+
+    padding-left: 20px;
+}
+
+.ProseMirror li p {
+    text-indent: 0;
+}
+
+/* ===========================
+   ЦИТАТЫ
+   =========================== */
+
+.ProseMirror blockquote {
+    border-left: 4px solid #888;
+
+    margin: 15px 0;
+    padding: 10px 15px;
+
+    color: #cccccc;
+
+    font-style: italic;
+
+    text-indent: 0;
+}
+
+/* ===========================
+   КОД
+   =========================== */
+
+.ProseMirror pre {
+    background: #1a1a1a;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+
+    margin: 15px 0;
+
+    text-indent: 0;
+}
+
+.ProseMirror code {
+    font-family: Consolas, monospace;
+
+    color: #7dd3fc;
+}
+
+/* ===========================
+   ИЗОБРАЖЕНИЯ
+   =========================== */
+
+.ProseMirror img {
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 12px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Слева */
+
+.image-left {
+    display: block;
+
+    margin-right: auto;
+}
+
+/* По центру */
+
+.image-center {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Справа */
+
+.image-right {
+    display: block;
+
+    margin-left: auto;
+}
+
+/* ===========================
+   ВЫРАВНИВАНИЕ ТЕКСТА
+   =========================== */
+
+.ProseMirror [align="left"] {
+    text-align: left;
+}
+
+.ProseMirror [align="center"] {
+    text-align: center;
+}
+
+.ProseMirror [align="right"] {
+    text-align: right;
+}
+
+.ProseMirror [align="justify"] {
+    text-align: justify;
+}

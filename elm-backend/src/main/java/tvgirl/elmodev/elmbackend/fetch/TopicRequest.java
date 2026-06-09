@@ -1,13 +1,10 @@
 package tvgirl.elmodev.elmbackend.fetch;
 
-import java.time.Instant;
-
-public record RequestTopic(
+public record TopicRequest(
         String question,
         String answer,
         String author,
         String content,
-        String category,
-        Instant data
+        String category
 ) {
 }

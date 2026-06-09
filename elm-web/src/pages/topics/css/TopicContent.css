@@ -1,0 +1,122 @@
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.editor {
+    border: 1px solid #555;
+    border-radius: 8px;
+
+    min-height: 500px;
+
+    padding: 20px;
+
+    background-color: white;
+    color: black;
+}
+
+.topic__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    margin: 50px;
+}
+
+
+.topic__content {
+    width: min(100% - 32px, 70vw, 3440px);
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 56px);
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.topic__content * {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.topic__content > div {
+    min-width: 0;
+}
+
+.topic__content p,
+.topic__content h1,
+.topic__content h2,
+.topic__content h3,
+.topic__content h4,
+.topic__content h5,
+.topic__content h6,
+.topic__content li {
+    white-space: normal;
+}
+
+.topic__content pre,
+.topic__content code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.topic__content p[align="left"],
+.topic__content h1[align="left"],
+.topic__content h2[align="left"] {
+    text-align: left;
+}
+
+.topic__content p[align="center"],
+.topic__content h1[align="center"],
+.topic__content h2[align="center"] {
+    text-align: center;
+}
+
+.topic__content p[align="right"],
+.topic__content h1[align="right"],
+.topic__content h2[align="right"] {
+    text-align: right;
+}
+
+.topic__content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.topic__content img.image-left {
+    margin-left: 0;
+    margin-right: auto;
+
+    justify-content: left;
+    justify-items: left;
+}
+
+.topic__content img.image-center {
+    margin-left: auto;
+    margin-right: auto;
+
+    justify-content: center;
+    justify-items: center;
+}
+
+.topic__content img.image-right {
+    margin-left: auto;
+    margin-right: 0;
+
+    display: flex;
+    justify-content: right;
+    justify-items: right;
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+}

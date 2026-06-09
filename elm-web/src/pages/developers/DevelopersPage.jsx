@@ -1,7 +1,7 @@
-export function LoginPage() {
+export function DevelopersPage() {
     return (
         <div>
-            <h1>Hello!</h1>
+            <h1>Dev!</h1>
         </div>
     )
 }

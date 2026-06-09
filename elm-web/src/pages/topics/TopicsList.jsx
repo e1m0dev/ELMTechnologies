@@ -1,39 +1,45 @@
-import './App.css'
-import {useEffect, useState} from "react";
+import './css/Topics.css'
+import {Link, Navigate, useNavigate} from "react-router";
+import {useTopic} from "../api/topicsAPI.js";
 
-function App() {
+export function TopicsList() {
 
-    const [loading, setLoading] = useState(true)
-    const [topics, setTopics] = useState([]);
+    const {topics, loading} = useTopic();
+    const navigate = useNavigate()
 
-    useEffect(() => {
-        fetch("http://localhost:8080/api/topic")
-            .then(response => response.json())
-            .then(data => {
-                setTopics(data)
-            })
-
-        setLoading(false)
-    }, []);
+    function navigateToTopic(category, id) {
+        navigate(`/topics/${category}/topic/${id}`);
+    }
 
     return (
-        <div>
-            {loading && <p>Loading ⌛</p>}
+        <div className="topics__div">
 
-            
-            <h1>Elmo!</h1>
+            <header>
 
-            {topics.map((item, index) => (
-                <div className="topics__list" key={index}>
-                    <p>{item.question}</p>
-                    <p>{item.category}</p>
-                    <p>{item.answer}</p>
-                    <p>{item.author}</p>
-                    <p>{item.data}</p>
-                </div>
-            ))}
+                <Link to={"/create-topic"}>
+                    <button className="button__create">Хотим что либо создать Эльм?</button>
+                </Link>
+            </header>
+
+            <main>
+                {topics.length === 0 && <h1 className="topics_listError">Топиков пока нет.. 🌉</h1>}
+
+                {topics.map((item) => (
+                    <div onClick={() => {navigateToTopic(item.category, item.id)}} className="topics__list" key={item.id}>
+                        <h4 className="topics__question">Вопрос: {item.question}</h4>
+                        <h4>ID: {item.id}</h4>
+                        <h4>Категория: {item.category}</h4>
+                        <h4>Короткий ответ: </h4>
+                        <h4 className="topics__answer">{item.answer}</h4>
+
+                        <p>Автор: {item.author}</p>
+                    </div>
+                ))}
+            </main>
+
+            <footer>
+                {loading && <p className="loading__text">Loading ⌛</p>}
+            </footer>
         </div>
     )
 }
-
-export default App

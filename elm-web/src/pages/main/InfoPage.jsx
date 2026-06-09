@@ -1,7 +1,7 @@
-export function DevelopersPage() {
+export function InfoPage() {
     return (
         <div>
-            <h1>Dev!</h1>
+            <h1>InfoPage</h1>
         </div>
     )
 }

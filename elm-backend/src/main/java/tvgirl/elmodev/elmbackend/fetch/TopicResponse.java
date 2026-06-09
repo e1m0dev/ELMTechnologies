@@ -1,8 +1,10 @@
 package tvgirl.elmodev.elmbackend.fetch;
 
 import java.time.Instant;
+import java.util.UUID;
 
-public record RequestTopic(
+public record TopicResponse(
+        UUID id,
         String question,
         String answer,
         String author,
