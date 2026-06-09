@@ -73,7 +73,7 @@ export function CreateTopic() {
             content: editor.getHTML()
         };
 
-        const response = await fetch("https://elmtechnologies-1.onrender.com/api/topic", {
+        const response = await fetch("https://elmtechnologies.onrender.com/api/topic", {
             method: "POST",
 
             headers: {

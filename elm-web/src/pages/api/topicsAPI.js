@@ -15,7 +15,7 @@ export function useTopic() {
                 setErrorMessage("");
 
                 const response = await fetch(
-                    "https://elmtechnologies-1.onrender.com/api/topic",
+                    "https://elmtechnologies.onrender.com/api/topic",
                     {
                         signal: controller.signal
                     }
