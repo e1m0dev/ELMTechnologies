@@ -38,7 +38,7 @@ export function TopicsList() {
             </main>
 
             <footer>
-                {loading && <p className="loading__text">Loading ⌛</p>}
+                {loading && <p className="loading__text">Прошу подождать, это может занять больше минуты, а возможно и больше, напоминаю хост шедевр</p>}
             </footer>
         </div>
     )
