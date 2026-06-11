@@ -1,5 +1,5 @@
 import './css/Topics.css'
-import {Link, Navigate, useNavigate} from "react-router";
+import {Link, useNavigate} from "react-router";
 import {useTopic} from "../api/topicsAPI.js";
 
 export function TopicsList() {
@@ -38,7 +38,7 @@ export function TopicsList() {
             </main>
 
             <footer>
-                {loading && <p className="loading__text">Прошу подождать, это может занять больше минуты, а возможно и больше, напоминаю хост шедевр</p>}
+                {loading && <p className="loading__text">Прошу подождать, это может занять больше минуты, а возможно и больше, напоминаю хост шедевр. Можете пока пойти заварить кофе я не знаю ._.</p>}
             </footer>
         </div>
     )
