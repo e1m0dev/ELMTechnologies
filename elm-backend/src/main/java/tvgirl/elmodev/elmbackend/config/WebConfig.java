@@ -12,7 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedOrigins(
                         "https://elmtechnologies.onrender.com",
-                        "https://elmtechnologies-1.onrender.com"
+                        "https://elmtechnologies-1.onrender.com",
+                        "http://localhost:5173"
                 )
                 .allowedOriginPatterns("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")

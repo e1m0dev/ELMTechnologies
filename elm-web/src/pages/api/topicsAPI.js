@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {useNavigate} from "react-router";
 
 export function useTopic() {
     const [errorMessage, setErrorMessage] = useState("");
@@ -16,6 +15,7 @@ export function useTopic() {
 
                 const response = await fetch(
                     "https://elmtechnologies.onrender.com/api/topic",
+                    // "http://localhost:8080/api/topic",
                     {
                         signal: controller.signal
                     }

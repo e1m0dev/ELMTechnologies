@@ -40,7 +40,6 @@ export function CreateTopic() {
     const [content, setContent] = useState("");
 
     const isQuestionTouched = question.length > 0;
-    const isCategoryTouched = category.length > 0;
     const isAnswerTouched = answer.length > 0;
     const isContentTouched = content.length > 0;
 
@@ -73,7 +72,10 @@ export function CreateTopic() {
             content: editor.getHTML()
         };
 
-        const response = await fetch("https://elmtechnologies.onrender.com/api/topic", {
+        const response = await fetch(
+            "https://elmtechnologies.onrender.com/api/topic",
+            // "http://localhost:8080/api/topic",
+    {
             method: "POST",
 
             headers: {
@@ -120,6 +122,7 @@ export function CreateTopic() {
 
             const response = await fetch(
                 "https://elmtechnologies.onrender.com/api/upload",
+                // "http://localhost:8080/api/upload",
                 {
                     method: "POST",
                     body: formData
