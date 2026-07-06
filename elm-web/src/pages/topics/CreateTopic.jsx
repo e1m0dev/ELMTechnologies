@@ -73,17 +73,17 @@ export function CreateTopic() {
         };
 
         const response = await fetch(
-            "https://elmtechnologies.onrender.com/api/topic",
-            // "http://localhost:8080/api/topic",
-    {
-            method: "POST",
+            // "https://elmtechnologies.onrender.com/api/topic",
+            "http://localhost:8080/api/topic",
+            {
+                method: "POST",
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            body: JSON.stringify(requestBody)
-        });
+                body: JSON.stringify(requestBody)
+            });
 
         if (!response.ok) {
             console.log("Ошибка");
@@ -94,9 +94,6 @@ export function CreateTopic() {
         setCategory("");
 
         nav("/topics")
-
-        console.log(requestBody)
-        console.log(response)
 
         editor.commands.clearContent();
     };
@@ -121,8 +118,8 @@ export function CreateTopic() {
             );
 
             const response = await fetch(
-                "https://elmtechnologies.onrender.com/api/upload",
-                // "http://localhost:8080/api/upload",
+                // "https://elmtechnologies.onrender.com/api/upload",
+                "http://localhost:8080/api/upload",
                 {
                     method: "POST",
                     body: formData
@@ -414,9 +411,9 @@ export function CreateTopic() {
 
 
                 <EditorContent
-                        editor={editor}
-                        className="editor"
-                    />
+                    editor={editor}
+                    className="editor"
+                />
 
                 <div className="topic__footerButtons">
                     <button type="submit">
